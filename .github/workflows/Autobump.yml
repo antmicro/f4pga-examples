@@ -1,4 +1,4 @@
-name: Latest
+name: Autobump
 
 concurrency:
   group: ${{ github.repository }}-${{ github.workflow }}-${{ github.ref }}
@@ -55,3 +55,29 @@ jobs:
     with:
       matrix: ${{ needs.Matrices.outputs.centos }}
       latest: true
+
+
+  Autobump:
+    needs:
+      - Debian
+      - Ubuntu
+      - Fedora
+      - Centos
+    runs-on: ubuntu-latest
+    name: Autobump arch-defs packages
+    #permissions:
+    #  contents: write
+
+    steps:
+
+      - name: Trigger hardware-ci tests
+        run: |
+          echo TODO
+
+      - name: Wait for hardware-ci tests to finish
+        run: |
+          echo TODO
+
+      - name: Bump arch-defs packages
+        run: |
+          echo TODO
