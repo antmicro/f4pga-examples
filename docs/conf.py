@@ -71,6 +71,7 @@ html_theme_options = {
     'repo_name': 'chipsalliance/f4pga-examples',
     'github_url' : 'https://github.com/chipsalliance/f4pga-examples',
     'globaltoc_collapse': True,
+    'globaltoc_depth': -1,
     'color_primary': 'indigo',
     'color_accent': 'blue',
 }
