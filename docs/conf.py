@@ -70,7 +70,7 @@ html_theme = 'sphinx_f4pga_theme'
 html_theme_options = {
     'repo_name': 'chipsalliance/f4pga-examples',
     'github_url' : 'https://github.com/chipsalliance/f4pga-examples',
-    'globaltoc_collapse': True,
+    'globaltoc_collapse': False,
     'color_primary': 'indigo',
     'color_accent': 'blue',
 }
