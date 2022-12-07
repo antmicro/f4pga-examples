@@ -1,0 +1,28 @@
+name: Pipeline
+
+on:
+  push:
+
+jobs:
+
+
+  Docs:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v3
+
+    - run: |
+        pip3 install -r docs/requirements.txt
+        make -C docs html
+
+    - run: |
+        cd docs/_build/html
+        touch .nojekyll
+        git init
+        cp ../../../.git/config ./.git/config
+        git add .
+        git config --local user.email "push@gha"
+        git config --local user.name "GHA"
+        git commit -a -m "update ${{ github.sha }}"
+        git push -u origin +HEAD:gh-pages
