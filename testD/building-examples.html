@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/f4pga.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Building example designs &#8212; F4PGA examples  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/tabs.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Counter test" href="xc7/counter_test.html" />
+    <link rel="prev" title="Getting F4PGA" href="getting.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=indigo data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#building-examples" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="F4PGA examples  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="_static/logo.svg" height="26"
+                   alt="F4PGA examples documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">F4PGA examples  documentation</span>
+          <span class="md-header-nav__topic"> Building example designs </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="GET" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+              autocapitalize="off" autocomplete="off" spellcheck="false"
+              data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/chipsalliance/f4pga-examples" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    chipsalliance/f4pga-examples
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list" style="float:left">
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">F4PGA examples  documentation</a></li>
+      </ul>
+      <ul class="md-tabs__list" id="chipsalliance-header" style="float:right">
+        
+	  <li class="md-tabs__item"><a href="https://chipsalliance.org" class="md-tabs__link">
+	    <i class="md-icon">web</i> CHIPS Alliance Website</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="F4PGA examples documentation" class="md-nav__button md-logo">
+      
+        <img src="_static/logo.svg" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="index.html"
+       title="F4PGA examples documentation">F4PGA examples  documentation</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/chipsalliance/f4pga-examples" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    chipsalliance/f4pga-examples
+  </div>
+</a>
+    </div>
+  
+  
+
+<ul class="md-nav__list">
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-0" type="checkbox" id="__toc-0-0">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-0"> Getting F4PGA
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="getting.html#prerequisites" class="md-nav__link">
+        Prerequisites</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-0-1" type="checkbox" id="__toc-0-0-1">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-0-1"> Toolchain installation
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-0-1-0" type="checkbox" id="__toc-0-0-1-0">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-0-1-0"> Conda
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="getting.html#choose-the-install-directory" class="md-nav__link">
+        Choose the install directory</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="getting.html#setup-and-download-assets" class="md-nav__link">
+        Setup and download assets</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-1" type="checkbox" id="__toc-0-1">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-1"> Building example designs
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-1-0" type="checkbox" id="__toc-0-1-0">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-1-0"> Xilinx 7-Series
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="xc7/counter_test.html" class="md-nav__link">
+        Counter test</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="xc7/picosoc_demo.html" class="md-nav__link">
+        PicoSoC demo</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="xc7/litex_demo.html" class="md-nav__link">
+        LiteX demo</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="xc7/timer.html" class="md-nav__link">
+        Timer</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="xc7/pulse_width_led.html" class="md-nav__link">
+        Pulse Width</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-1-1" type="checkbox" id="__toc-0-1-1">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-1-1"> QuickLogic EOS S3
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="eos-s3/btn_counter.html" class="md-nav__link">
+        Button counter</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-2" type="checkbox" id="__toc-0-2">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-2"> Running example designs
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-2-0" type="checkbox" id="__toc-0-2-0">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-2-0"> Connecting development boards
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#arty-board" class="md-nav__link">
+        Arty board</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#basys-3-board" class="md-nav__link">
+        Basys 3 board</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#zybo-z7-board" class="md-nav__link">
+        Zybo-Z7 board</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#connecting-to-uart" class="md-nav__link">
+        Connecting to UART</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#setting-up-tftp" class="md-nav__link">
+        Setting up TFTP</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#configuring-your-network-interfaces" class="md-nav__link">
+        Configuring your network interfaces</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-0-2-4" type="checkbox" id="__toc-0-2-4">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-0-2-4"> Setting up Zynq ARM CPU
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#prepare-sd-card" class="md-nav__link">
+        Prepare SD card</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="running-examples.html#load-bitstreams-from-u-boot" class="md-nav__link">
+        Load bitstreams from U-boot</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+    <span class="md-nav__link caption"><span class="caption-text">Custom designs</span></span>
+  
+  </li>
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-2-0" type="checkbox" id="__toc-2-0">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-2-0"> Building custom designs
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-2-0-0" type="checkbox" id="__toc-2-0-0">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-2-0-0"> Preparing Your Design
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="personal-designs.html#hdl-files" class="md-nav__link">
+        HDL Files</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="personal-designs.html#constraint-file" class="md-nav__link">
+        Constraint File</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="personal-designs.html#makefile" class="md-nav__link">
+        Makefile</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="personal-designs.html#building-your-personal-projects" class="md-nav__link">
+        Building your personal projects</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  <input class="md-toggle md-nav__toggle" data-md-toggle="toc-2-1" type="checkbox" id="__toc-2-1">
+      <label class="md-nav__link md-nav__link--nested" for="__toc-2-1"> Customizing the Makefiles
+        <span class="md-nav__icon"><span class="md-icon"></span></span></label><nav class="md-nav">
+          <ul class="md-nav__list">
+  <li class="md-nav__item">
+  
+      <a href="customizing-makefiles.html#example" class="md-nav__link">
+        Example</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="customizing-makefiles.html#adding-hdl-sources-and-specifying-the-top-module" class="md-nav__link">
+        Adding HDL Sources and Specifying the Top Module</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="customizing-makefiles.html#constraint-files" class="md-nav__link">
+        Constraint files</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="customizing-makefiles.html#a-note-on-the-example-designs-use-of-ifeq-else-ifeq-blocks" class="md-nav__link">
+        A Note on the example designs use of ifeq/else ifeq blocks</a>
+    
+
+  
+  </li></ul>
+        </nav>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+    <span class="md-nav__link caption"><span class="caption-text">Additional example designs</span></span>
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="project-f.html" class="md-nav__link">
+        Running Project F designs</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="basys3.html" class="md-nav__link">
+        Additional Basys3 Examples</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+    <span class="md-nav__link caption"><span class="caption-text">Development</span></span>
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="development/building-docs.html" class="md-nav__link">
+        Building the documentation</a>
+    
+
+  
+  </li>
+  <li class="md-nav__item">
+  
+      <a href="development/running-ci-locally.html" class="md-nav__link">
+        Running CI locally</a>
+    
+
+  
+  </li>
+</ul>
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#building-examples--page-root" class="md-nav__link">Building example designs</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#xilinx-7-series" class="md-nav__link">Xilinx 7-Series</a>
+        </li>
+        <li class="md-nav__item"><a href="#quicklogic-eos-s3" class="md-nav__link">QuickLogic EOS S3</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/building-examples.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="building-example-designs">
+<span id="building-examples"></span><h1 id="building-examples--page-root">Building example designs<a class="headerlink" href="#building-examples--page-root" title="Permalink to this headline">¶</a></h1>
+<p>Before building any example, set the installation directory to match what you
+set it to earlier, for example:</p>
+<div class="highlight-bash notranslate" id="export-install-dir"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">F4PGA_INSTALL_DIR</span><span class="o">=</span>~/opt/f4pga
+</pre></div>
+</div>
+<p>Select your FPGA family:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-QXJ0aXgtNw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-QXJ0aXgtNw==" name="QXJ0aXgtNw==" role="tab" tabindex="0">Artix-7</button><button aria-controls="panel-0-RU9TIFMz" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-RU9TIFMz" name="RU9TIFMz" role="tab" tabindex="-1">EOS S3</button></div><div aria-labelledby="tab-0-QXJ0aXgtNw==" class="sphinx-tabs-panel group-tab" id="panel-0-QXJ0aXgtNw==" name="QXJ0aXgtNw==" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate" id="fpga-fam-xc7"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">FPGA_FAM</span><span class="o">=</span><span class="s2">"xc7"</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-RU9TIFMz" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-RU9TIFMz" name="RU9TIFMz" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate" id="fpga-fam-eos-s3"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">FPGA_FAM</span><span class="o">=</span><span class="s2">"eos-s3"</span>
+</pre></div>
+</div>
+</div></div>
+<p>Next, prepare the environment:</p>
+<div class="highlight-bash notranslate" id="conda-prep-env"><div class="highlight"><pre><span></span><span class="nb">source</span> <span class="s2">"</span><span class="nv">$F4PGA_INSTALL_DIR</span><span class="s2">/</span><span class="nv">$FPGA_FAM</span><span class="s2">/conda/etc/profile.d/conda.sh"</span>
+</pre></div>
+</div>
+<p>Finally, enter your working Conda environment:</p>
+<div class="highlight-bash notranslate" id="conda-act-env"><div class="highlight"><pre><span></span>conda activate <span class="nv">$FPGA_FAM</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You will need to run the commands for setting the path and source of your conda environment
+each time you open a new terminal. You will also need to activate the Conda environment for
+your hardware before you attempt to build your designs. It might be a good idea to add the
+above commands to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> either as default commands that run each time you open a
+new terminal or aliases to save yourself some repetitive typing.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t know how to upload any of the following examples onto your
+development board, please refer to the Running examples section.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you have executed all the above commands, or otherwise you may encounter errors when
+building the designs.</p>
+</div>
+<section id="xilinx-7-series">
+<h2 id="xilinx-7-series">Xilinx 7-Series<a class="headerlink" href="#xilinx-7-series" title="Permalink to this headline">¶</a></h2>
+<p>Enter the directory that contains examples for Xilinx 7-Series FPGAs:</p>
+<div class="highlight-bash notranslate" id="enter-dir-xc7"><div class="highlight"><pre><span></span><span class="nb">cd</span> xc7
+</pre></div>
+</div>
+<p>Then, follow the guidelines for each example:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xc7/counter_test.html">Counter test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xc7/picosoc_demo.html">PicoSoC demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xc7/litex_demo.html">LiteX demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xc7/timer.html">Timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xc7/pulse_width_led.html">Pulse Width</a></li>
+</ul>
+</div>
+</section>
+<section id="quicklogic-eos-s3">
+<h2 id="quicklogic-eos-s3">QuickLogic EOS S3<a class="headerlink" href="#quicklogic-eos-s3" title="Permalink to this headline">¶</a></h2>
+<p>Enter the directory that contains examples for QuickLogic EOS S3:</p>
+<div class="highlight-bash notranslate" id="enter-dir-eos-s3"><div class="highlight"><pre><span></span><span class="nb">cd</span> eos-s3
+</pre></div>
+</div>
+<p>Then, follow the guidelines for each example:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eos-s3/btn_counter.html">Button counter</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="getting.html" title="Getting F4PGA"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Getting F4PGA </span>
+              </div>
+            </a>
+          
+          
+            <a href="xc7/counter_test.html" title="Counter test"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Counter test </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-social">
+          
+            <div class="md-footer-social__link">
+              <a href="https://chipsalliance.org/" target="_blank">CHIPS Alliance</a>
+            </div>
+            </ul>
+            <div class="md-footer-social__link">
+              <a href="https://github.com/chipsalliance/f4pga-examples" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright F4PGA Authors, 2020 - 2022.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+             and
+            <a href="https://github.com/f4pga/sphinx_f4pga_theme">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script src="_static/javascripts/f4pga.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
