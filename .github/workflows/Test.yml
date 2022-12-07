@@ -25,8 +25,8 @@ jobs:
         git config --local user.name "GHA"
         git fetch --all
         git checkout -b gh-pages origin/gh-pages
-        if [ -d testC ]; then rm -rf testC; fi
-        cp -vr ../docs/_build/html testC
-        git add testC
+        if [ -d testG ]; then rm -rf testG; fi
+        cp -vr ../docs/_build/html testG
+        git add testG
         git commit -a -m "update ${{ github.sha }}"
         git push -u origin +HEAD:gh-pages
