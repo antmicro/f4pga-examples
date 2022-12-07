@@ -1,5 +1,5 @@
 sphinx==4.5.0
 docutils
-git+https://github.com/f4pga/sphinx_f4pga_theme.git@f4pga#egg=sphinx-f4pga-theme
+git+https://github.com/f4pga/sphinx_f4pga_theme.git@v0.0.35#egg=sphinx-f4pga-theme
 sphinx-tabs
 sphinx-jinja
